@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      background-color: hsl(210, 46%, 95%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-size: 1.3rem;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .card {
+      background-color: white;
+      display: flex;
+      width: 100%;
+      max-width: 73rem;
+      border-radius: 1rem;
+      box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.083);
+
+    }
+
+    .img-section {
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    .img-section img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    .text-content {
+      margin: 3rem;
+    }
+
+    .text-content h2 {
+      color: hsl(217, 19%, 35%);
+      margin-bottom: 1.5rem;
+    }
+
+    .para {
+      color: hsl(214, 17%, 51%);
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+    }
+
+    .info-child {
+      margin-left: 1.5rem;
+    }
+
+    .avatar {
+      width: 4rem;
+      border-radius: 100%;
+    }
+
+    .btn-share {
+      background-color: hsl(210, 46%, 95%);
+      border-radius: 100%;
+
+    }
+
+    .btn-share img {
+      margin: 0.5rem;
+      align-items: center;
+    }
+
+    .name {
+      color: hsl(217, 19%, 35%);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .date {
+      color: hsl(212, 23%, 69%);
+    }
+
+    .share-card {
+      --top: 0px;
+      --left: 0px;
+
+      display: flex;
+      background-color: hsl(217, 19%, 35%);
+      padding: 1.5rem 3rem;
+      border-radius: 1rem;
+      align-items: center;
+      position: absolute;
+      /* top: -67px;
+      right: -102px; */
+
+      top: var(--top);
+      left: var(--left);
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.182);
+    }
+
+    .share-card p {
+      color: hsl(212, 23%, 69%);
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    .share-card img {
+      margin-left: 1rem;
+    }
+
+    .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid hsl(99, 100%, 50%);
+      /* border-top: 10px solid hsl(217, 19%, 35%); */
+      position: absolute;
+      /* bottom: -9px;
+      left: 102px; */
+
+      top: calc(var(--top) * 50px);
+      left: calc(var(--left) * 99px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="img-section">
+      <img src="./images/drawers.jpg" alt="">
+    </div>
+    <div class="text-content">
+      <h2>Shift the overall look and feel by adding these wonderful
+        touches to furniture in your home</h2>
+      <p class="para">Ever been in a room and felt like something was missing? Perhaps
+        it felt slightly bare and uninviting. I’ve got some simple tips
+        to help you make any room feel complete.</p>
+      <div class="info">
+        <img class="avatar" src="./images/avatar-michelle.jpg" alt="">
+        <div class="info-child">
+          <p class="name">Michelle Appleton</p>
+          <p class="date">28 Jun 2020</p>
+        </div>
+
+        <div style="position: relative; margin-left: auto;">
+          <div class="btn-share">
+            <img src="./images/icon-share.svg" alt="">
+          </div>
+
+          <div class="share-card" style="filter: drop-shadow(3px 5px 5px #00000036);">
+            <p> Share</p>
+            <img src="./images/icon-facebook.svg" alt="">
+            <img src="./images/icon-twitter.svg" alt="">
+            <img src="./images/icon-pinterest.svg" alt="">
+            <div class="arrow-down"></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<script>
+  const btnShare = document.querySelector('.btn-share')
+  const shareCard = document.querySelector('.share-card')
+  const arrowDown = document.querySelector('.arrow-down')
+
+  btnShare.onclick = () => {
+    shareCard.style.display = 'flex'
+    arrowDown.style.display = 'block'
+  }
+
+</script>
+
+</html>
